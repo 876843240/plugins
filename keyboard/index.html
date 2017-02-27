@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>移动端模拟数字键盘功能</title>
+    <meta name="keywords" content="数字键盘 移动端 插件 原生js">
+    <meta name="description" content="一个简单方便的移动端纯数字键盘插件">
+    <link rel="stylesheet" href="./css/keycode.min.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="./css/icon/iconfont.css">
+    <style>
+    form {
+        width: 90vw;
+        margin: 4rem auto;
+    }
+    
+    input {
+        outline: none;
+    }
+    
+    form input {
+        display: block;
+        width: 100%;
+        margin-bottom: 0.5rem;
+        height: 3rem;
+        font-size: 1.2rem;
+        padding-left: 10px;
+        border: 1px solid #ddd;
+    }
+    </style>
+</head>
+
+<body>
+    <main class="container" id="mykeyboard">
+        <form action="">
+            <input type="text" name="text" placeholder="输入" id="myText">
+            <input type="tel" name="tel" placeholder="输入" id="myTel">
+            <input type="button" name="button" value="提交" id="myButton">
+            <input type="submit" name="submit" placeholder="输入" id="mySubmit">
+        </form>
+        <div><a href="javascript:void(0);" id="myLink">提交</a></div>
+    </main>
+    <script type="text/javascript" src="./js/keycode.min.js"></script>
+    <script>
+    Keyboard({
+        contain: ['myText','myTel'],
+        readOnce: false, //是否键盘只生成一次
+        container: document.body //当前弹框存放的父元素
+    });
+    </script>
+</body>
+
+</html>
